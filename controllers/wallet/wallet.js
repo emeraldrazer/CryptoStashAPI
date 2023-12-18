@@ -6,7 +6,7 @@ const createWallet = async(req, res) => {
     const createdWallet = await Wallet.create();
 
     if(!createdWallet){
-
+        console.log();
     }
 
 }
