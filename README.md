@@ -1,2 +1,2 @@
 # CryptoStashAPI
- A fake online crypto wallet
+Fake online crypto wallet
