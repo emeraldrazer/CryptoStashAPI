@@ -1,12 +1,12 @@
-const Mnemonic = require('./bip39');
-const Guid = require('./uuid');
+const generateMnemonic = require('./bip39');
+const generateGuid = require('./uuid');
 const { generateJWT, checkJWT } = require('./jwt');
 const { generateString } = require('./rstring');
 
 module.exports = {
-    Mnemonic,
-    Guid,
+    generateMnemonic,
+    generateGuid,
     generateJWT,
+    generateString,
     checkJWT,
-    generateString
 }

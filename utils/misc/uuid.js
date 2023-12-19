@@ -1,13 +1,8 @@
 const uuid = require('uuid').v4;
 
-class Guid {
-    constructor() {
-        this.generateGuid();
-    }
-
-    generateGuid() {
-        this.id = uuid();
-    }
+const generateGuid = async () => {
+    const id = uuid();
+    return id;
 }
 
-module.exports = Guid;
+module.exports = generateGuid;

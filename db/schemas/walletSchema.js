@@ -1,63 +1,54 @@
 const mongoose = require('mongoose');
-const {Mnemonic, Guid} = require('../../utils/misc');
 
 const WalletSchema = new mongoose.Schema({
     public_id: {
         type: String,
-        default: new Guid().id
+        required: true
     },
     public_address: {
         type: String,
+        required: true
     },
-    mnemonic: {
+    private_mnemonic: {
         type: String,
-        default: new Mnemonic().generated
+        required: true
+    },
+    private_address: {
+        type: String,
+        required: true
     },
     total_balance: {
         type: Number,
-        default: 0
+        default: 0,
+        required: true
     },
     created_at: {
         type: Date,
-        default: new Date().getTime()
+        default: new Date().getTime(),
+        required: true
     },
     cryptocurrencies: [{
-        btc: {
-            type: Number,
-            default: 0
-        },
-        eth: {
-            type: Number,
-            default: 0
-        },
-        bnb: {
-            type: Number,
-            default: 0
-        },
-        solana: {
-            type: Number,
-            default: 0
-        },
-        xrp: {
-            type: Number,
-            default: 0
-        },
-        usdt: {
-            type: Number,
-            default: 0
-        },
-        ltc: {
-            type: Number,
-            default: 0
-        },
-        doge: {
-            type: Number,
-            default: 0
-        },
-        nft: {
+        full_name: {
             type: String,
-            default: 0
+            required: true
         },
+        short_name: {
+            type: String,
+            required: true,
+        },
+        public_address: {
+            type: String,
+            required: true
+        },
+        private_address: {
+            type: String,
+            required: true
+        },
+        balance: {
+            type: Number,
+            default: 0,
+            required: true
+        }
     }]
 })
 
