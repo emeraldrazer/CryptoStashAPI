@@ -49,7 +49,29 @@ const WalletSchema = new mongoose.Schema({
             default: 0,
             required: true
         }
-    }]
+    }],
+    non_fungible_token: {
+        short_name:{
+            type: String,
+            default: 'nft'
+        },
+        public_address: {
+            type: String,
+            required: true
+        },
+        private_address: {
+            type: String,
+            required: true
+        },
+        balance: {
+            type: Number,
+            default: 0,
+            required: true
+        },
+        all_nfts: [{
+            type: String,
+        }]
+    }
 })
 
 module.exports = mongoose.model('wallet', WalletSchema)

@@ -25,6 +25,7 @@ const cloudinary = require('cloudinary').v2;
 const express = require('express');
 const app = express();
 
+const publicWalletRoute = require('./routes/publicWalletRoute');
 const walletRoute = require('./routes/walletRoute');
 
 const notFoundMiddleWare = require('./middleware/errors/not-found')
@@ -41,6 +42,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 app.use('/api/v1/', walletRoute);
+app.use('/public/', publicWalletRoute);
 
 app.use(notFoundMiddleWare);
 app.use(errorHandlerMiddleWare);
